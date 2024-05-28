@@ -7,7 +7,7 @@ const cron = require("node-cron");
 const logger = require("./logger");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
