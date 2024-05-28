@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SlangAI</title>
+    <meta property="og:title" content="SlangAI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+
+    <style data-tag="reset-style-sheet">
+      html {
+        line-height: 1.15;
+      }
+      body {
+        margin: 0;
+      }
+      * {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+      }
+      p,
+      li,
+      ul,
+      pre,
+      div,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      figure,
+      blockquote,
+      figcaption {
+        margin: 0;
+        padding: 0;
+      }
+      button {
+        background-color: transparent;
+      }
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font-family: inherit;
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0;
+      }
+      button,
+      select {
+        text-transform: none;
+      }
+      button,
+      [type="button"],
+      [type="reset"],
+      [type="submit"] {
+        -webkit-appearance: button;
+      }
+      button::-moz-focus-inner,
+      [type="button"]::-moz-focus-inner,
+      [type="reset"]::-moz-focus-inner,
+      [type="submit"]::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+      }
+      button:-moz-focus,
+      [type="button"]:-moz-focus,
+      [type="reset"]:-moz-focus,
+      [type="submit"]:-moz-focus {
+        outline: 1px dotted ButtonText;
+      }
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+      input {
+        padding: 2px 4px;
+      }
+      img {
+        display: block;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style: normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="public/black and white monogram busins logo.png"
+      type="icon/png"
+      sizes="32x32"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/shepherd.js/8.0.0/css/shepherd.css"
+    />
+    <link rel="stylesheet" href="./styles/apptour.css" />
+    <style>
+      body::-webkit-scrollbar {
+        width: 0.5em;
+        z-index: 100;
+        background-color: transparent;
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background-color: white;
+        box-shadow: 0 -100vh 0 100vh #5128f5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay" id="overlay">
+      <div id="loading-screen" class="loader"></div>
+    </div>
+
+    <link rel="stylesheet" href="./styles/style.css" />
+    <div>
+      <link href="./styles/main.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <section id="home" class="home-hero">
+          <div class="home-menu">
+            <div class="home-desktop-navigation">
+              <nav class="home-centered">
+                <a href="#home" class="home-link">
+                  <h1 class="home-text">SlangAI</h1>
+                </a>
+                <div class="home-left">
+                  <div class="home-links">
+                    <a href="#slang" class="home-link1 Link">Know the Slang</a>
+                    <a href="#genSlang" class="home-link2 Link">
+                      Slangs of the Day
+                    </a>
+                    <a href="#slangtence" class="home-link3 Link">Slangtence</a>
+                  </div>
+                </div>
+                <div class="home-right">
+                  <a
+                    href="https://github.com/Rutam21/SlangAI"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="home-link4"
+                  >
+                    <svg viewBox="0 0 877.7142857142857 1024" class="home-icon">
+                      <path
+                        d="M438.857 73.143c242.286 0 438.857 196.571 438.857 438.857 0 193.714-125.714 358.286-300 416.571-22.286 4-30.286-9.714-30.286-21.143 0-14.286 0.571-61.714 0.571-120.571 0-41.143-13.714-67.429-29.714-81.143 97.714-10.857 200.571-48 200.571-216.571 0-48-17.143-86.857-45.143-117.714 4.571-11.429 19.429-56-4.571-116.571-36.571-11.429-120.571 45.143-120.571 45.143-34.857-9.714-72.571-14.857-109.714-14.857s-74.857 5.143-109.714 14.857c0 0-84-56.571-120.571-45.143-24 60.571-9.143 105.143-4.571 116.571-28 30.857-45.143 69.714-45.143 117.714 0 168 102.286 205.714 200 216.571-12.571 11.429-24 30.857-28 58.857-25.143 11.429-89.143 30.857-127.429-36.571-24-41.714-67.429-45.143-67.429-45.143-42.857-0.571-2.857 26.857-2.857 26.857 28.571 13.143 48.571 64 48.571 64 25.714 78.286 148 52 148 52 0 36.571 0.571 70.857 0.571 81.714 0 11.429-8 25.143-30.286 21.143-174.286-58.286-300-222.857-300-416.571 0-242.286 196.571-438.857 438.857-438.857zM166.286 703.429c1.143-2.286-0.571-5.143-4-6.857-3.429-1.143-6.286-0.571-7.429 1.143-1.143 2.286 0.571 5.143 4 6.857 2.857 1.714 6.286 1.143 7.429-1.143zM184 722.857c2.286-1.714 1.714-5.714-1.143-9.143-2.857-2.857-6.857-4-9.143-1.714-2.286 1.714-1.714 5.714 1.143 9.143 2.857 2.857 6.857 4 9.143 1.714zM201.143 748.571c2.857-2.286 2.857-6.857 0-10.857-2.286-4-6.857-5.714-9.714-3.429-2.857 1.714-2.857 6.286 0 10.286s7.429 5.714 9.714 4zM225.143 772.571c2.286-2.286 1.143-7.429-2.286-10.857-4-4-9.143-4.571-11.429-1.714-2.857 2.286-1.714 7.429 2.286 10.857 4 4 9.143 4.571 11.429 1.714zM257.714 786.857c1.143-3.429-2.286-7.429-7.429-9.143-4.571-1.143-9.714 0.571-10.857 4s2.286 7.429 7.429 8.571c4.571 1.714 9.714 0 10.857-3.429zM293.714 789.714c0-4-4.571-6.857-9.714-6.286-5.143 0-9.143 2.857-9.143 6.286 0 4 4 6.857 9.714 6.286 5.143 0 9.143-2.857 9.143-6.286zM326.857 784c-0.571-3.429-5.143-5.714-10.286-5.143-5.143 1.143-8.571 4.571-8 8.571 0.571 3.429 5.143 5.714 10.286 4.571s8.571-4.571 8-8z"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <header class="home-header">
+            <h1 id="brandname" class="home-text01">Blend in with Gen Z Slangs</h1>
+            <p class="home-text02">
+              <span class="home-text03">
+                Not sure about the weird short words that Gen Z frequently use
+                in their conversations?
+              </span>
+              <br />
+              <span>Well, there you go&nbsp;</span>
+              <br />
+            </p>
+            <animate-on-reveal
+              animation="pulse"
+              duration="298ms"
+              delay="0s"
+              direction="normal"
+              easing="ease"
+              iteration="1"
+            >
+              <a href="#slang">
+                <div id="appStart" data-thq-animate-on-reveal="true" class="home-get-started">
+                  <span class="home-text07">Slang On</span>
+                </div>
+              </a>
+            </animate-on-reveal>
+            <img alt="image" src="./assets/hero.gif" class="home-image" />
+          </header>
+        </section>
+        <div id="slang" class="home-dashboard-preview">
+          <div class="home-outline">
+            <form
+              class="home-form"
+              id="slangForm"
+              action="/getSlang"
+              method="post"
+            >
+              <div class="home-inner">
+                <span id="ktslang" class="home-text08 title">
+                  <span class="home-text09">&nbsp;KNOW&nbsp;</span>
+                  <span class="home-text10">THE SLANG</span>
+                </span>
+                <input
+                  type="text"
+                  id="slangInput"
+                  required="true"
+                  placeholder="Gen Z Slang Here"
+                  class="home-textinput input"
+                />
+                <animate-on-reveal
+                  animation="pulse"
+                  duration="300ms"
+                  delay="0s"
+                  direction="normal"
+                  easing="ease"
+                  iteration="1"
+                >
+                  <button
+                    id="findSlang"
+                    type="submit"
+                    data-thq-animate-on-reveal="true"
+                    class="home-get-started1"
+                  >
+                    <span class="home-text11">Hit Me Up</span>
+                  </button>
+                </animate-on-reveal>
+              </div>
+            </form>
+            <div id="slangDiv" class="home-container1">
+              <span id="slangResult" class="home-text12"> </span>
+              <button type="button" class="home-button button">
+                <svg viewBox="0 0 1024 1024" class="home-icon2">
+                  <path
+                    d="M1014.662 822.66c-0.004-0.004-0.008-0.008-0.012-0.010l-310.644-310.65 310.644-310.65c0.004-0.004 0.008-0.006 0.012-0.010 3.344-3.346 5.762-7.254 7.312-11.416 4.246-11.376 1.824-24.682-7.324-33.83l-146.746-146.746c-9.148-9.146-22.45-11.566-33.828-7.32-4.16 1.55-8.070 3.968-11.418 7.31 0 0.004-0.004 0.006-0.008 0.010l-310.648 310.652-310.648-310.65c-0.004-0.004-0.006-0.006-0.010-0.010-3.346-3.342-7.254-5.76-11.414-7.31-11.38-4.248-24.682-1.826-33.83 7.32l-146.748 146.748c-9.148 9.148-11.568 22.452-7.322 33.828 1.552 4.16 3.97 8.072 7.312 11.416 0.004 0.002 0.006 0.006 0.010 0.010l310.65 310.648-310.65 310.652c-0.002 0.004-0.006 0.006-0.008 0.010-3.342 3.346-5.76 7.254-7.314 11.414-4.248 11.376-1.826 24.682 7.322 33.83l146.748 146.746c9.15 9.148 22.452 11.568 33.83 7.322 4.16-1.552 8.070-3.97 11.416-7.312 0.002-0.004 0.006-0.006 0.010-0.010l310.648-310.65 310.648 310.65c0.004 0.002 0.008 0.006 0.012 0.008 3.348 3.344 7.254 5.762 11.414 7.314 11.378 4.246 24.684 1.826 33.828-7.322l146.746-146.748c9.148-9.148 11.57-22.454 7.324-33.83-1.552-4.16-3.97-8.068-7.314-11.414z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <section id="genSlang" class="home-integrations">
+          <div class="home-centered-container">
+            <div class="home-heading">
+              <span class="home-text20 title">
+                <span class="home-text21">&nbsp;SLANGS&nbsp;</span>
+                <span class="home-text23">OF THE</span>
+                <span>&nbsp;DAY</span>
+              </span>
+              <span class="home-text25">
+                Come here to learn some new slangs&nbsp;every day, randomly
+                generated by our smart AI Models.
+              </span>
+            </div>
+            <div
+              data-thq="slider"
+              data-loop="true"
+              data-autoplay="true"
+              data-navigation="true"
+              data-pagination="true"
+              data-reverse-direction="true"
+              data-pause-autoplay-on-mouse-enter="true"
+              data-disable-autoplay-on-interaction="false"
+              class="home-slider swiper"
+              id="slangSlider"
+            >
+              <div data-thq="slider-wrapper" class="swiper-wrapper">
+                <div
+                  data-thq="slider-slide"
+                  class="home-slider-slide swiper-slide"
+                >
+                  <h1 id="slang1" class="home-heading1"></h1>
+                  <span id="meaning1" class="home-text28"> </span>
+                  <span id="sentence1" class="home-text31"> </span>
+                </div>
+                <div
+                  data-thq="slider-slide"
+                  class="home-slider-slide1 swiper-slide"
+                >
+                  <h1 id="slang2" class="home-text32"></h1>
+                  <span id="meaning2" class="home-text33"></span>
+                  <span id="sentence2" class="home-text34"> </span>
+                </div>
+                <div
+                  data-thq="slider-slide"
+                  class="home-slider-slide2 swiper-slide"
+                >
+                  <h1 id="slang3" class="home-text35"></h1>
+                  <span id="meaning3" class="home-text36"></span>
+                  <span id="sentence3" class="home-text37"> </span>
+                </div>
+                <div
+                  data-thq="slider-slide"
+                  class="home-slider-slide3 swiper-slide"
+                >
+                  <h1 id="slang4" class="home-text38"></h1>
+                  <span id="meaning4" class="home-text39"></span>
+                  <span id="sentence4" class="home-text40"> </span>
+                </div>
+              </div>
+              <div
+                data-thq="slider-pagination"
+                class="home-slider-pagination swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal"
+              >
+                <div
+                  data-thq="slider-pagination-bullet"
+                  class="swiper-pagination-bullet swiper-pagination-bullet-active"
+                ></div>
+                <div
+                  data-thq="slider-pagination-bullet"
+                  class="swiper-pagination-bullet"
+                ></div>
+                <div
+                  data-thq="slider-pagination-bullet"
+                  class="swiper-pagination-bullet"
+                ></div>
+                <div
+                  data-thq="slider-pagination-bullet"
+                  class="swiper-pagination-bullet"
+                ></div>
+              </div>
+              <div
+                data-thq="slider-button-prev"
+                class="home-slider-button-prev swiper-button-prev"
+              ></div>
+              <div
+                data-thq="slider-button-next"
+                class="home-slider-button-next swiper-button-next"
+              ></div>
+            </div>
+          </div>
+        </section>
+        <div id="slangtence" class="home-testimonial">
+          <span class="home-text41 title">
+            <span class="home-text42">&nbsp;SLANG&nbsp;</span>
+            <span class="home-text43">TENCE</span>
+          </span>
+          <div id="slangtenceBox" class="home-testimonial1">
+            <div class="home-container2">
+              <svg viewBox="0 0 950.8571428571428 1024" class="home-icon4">
+                <path
+                  d="M438.857 548.571v219.429c0 60.571-49.143 109.714-109.714 109.714h-219.429c-60.571 0-109.714-49.143-109.714-109.714v-402.286c0-161.143 131.429-292.571 292.571-292.571h36.571c20 0 36.571 16.571 36.571 36.571v73.143c0 20-16.571 36.571-36.571 36.571h-36.571c-80.571 0-146.286 65.714-146.286 146.286v18.286c0 30.286 24.571 54.857 54.857 54.857h128c60.571 0 109.714 49.143 109.714 109.714zM950.857 548.571v219.429c0 60.571-49.143 109.714-109.714 109.714h-219.429c-60.571 0-109.714-49.143-109.714-109.714v-402.286c0-161.143 131.429-292.571 292.571-292.571h36.571c20 0 36.571 16.571 36.571 36.571v73.143c0 20-16.571 36.571-36.571 36.571h-36.571c-80.571 0-146.286 65.714-146.286 146.286v18.286c0 30.286 24.571 54.857 54.857 54.857h128c60.571 0 109.714 49.143 109.714 109.714z"
+                ></path>
+              </svg>
+            </div>
+            <div class="home-container3">
+              <h1 id="slangtenceResult" class="home-text44"></h1>
+              <span id="meaning" class="home-text45"> </span>
+            </div>
+            <div class="home-container4">
+              <svg viewBox="0 0 950.8571428571428 1024" class="home-icon6">
+                <path
+                  d="M438.857 182.857v402.286c0 161.143-131.429 292.571-292.571 292.571h-36.571c-20 0-36.571-16.571-36.571-36.571v-73.143c0-20 16.571-36.571 36.571-36.571h36.571c80.571 0 146.286-65.714 146.286-146.286v-18.286c0-30.286-24.571-54.857-54.857-54.857h-128c-60.571 0-109.714-49.143-109.714-109.714v-219.429c0-60.571 49.143-109.714 109.714-109.714h219.429c60.571 0 109.714 49.143 109.714 109.714zM950.857 182.857v402.286c0 161.143-131.429 292.571-292.571 292.571h-36.571c-20 0-36.571-16.571-36.571-36.571v-73.143c0-20 16.571-36.571 36.571-36.571h36.571c80.571 0 146.286-65.714 146.286-146.286v-18.286c0-30.286-24.571-54.857-54.857-54.857h-128c-60.571 0-109.714-49.143-109.714-109.714v-219.429c0-60.571 49.143-109.714 109.714-109.714h219.429c60.571 0 109.714 49.143 109.714 109.714z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <span class="home-text46">
+            Ask our AI to generate meaningful sentences that are made of slangs.
+          </span>
+          <animate-on-reveal
+            animation="pulse"
+            duration="300ms"
+            delay="0s"
+            direction="normal"
+            easing="ease"
+            iteration="1"
+          >
+            <button
+              id="getSlangtence"
+              data-thq-animate-on-reveal="true"
+              class="home-get-started2"
+            >
+              <span class="home-text47">Generate</span>
+            </button>
+          </animate-on-reveal>
+        </div>
+        <footer class="home-footer">
+          <div class="home-bottom">
+            <a href="#home" class="home-link6">
+              <h1 class="home-text48">SlangAI</h1>
+            </a>
+            <span class="home-text49">
+              <span>Copyright ©</span>
+              <a
+                href="https://github.com/Rutam21"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link7"
+              >
+                Rutam
+              </a>
+              <span>2024</span>
+            </span>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script
+      defer=""
+      src="https://unpkg.com/@teleporthq/react-components/dist/animate-on-reveal.umd.js"
+    ></script>
+    <script
+      defer=""
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shepherd.js/8.0.0/js/shepherd.min.js"></script>
+    <script src="./scripts/apptour.js"></script>
+    <script src="./scripts/getSlang.js"></script>
+    <script src="./scripts/getSlangtence.js"></script>
+    <script src="./scripts/dailySlangs.js"></script>
+  </body>
+</html>
