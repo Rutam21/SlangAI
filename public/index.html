@@ -108,7 +108,7 @@
     />
     <link
       rel="shortcut icon"
-      href="public/black and white monogram busins logo.png"
+      href="./assets/favicon.png"
       type="icon/png"
       sizes="32x32"
     />
@@ -217,25 +217,33 @@
         <section id="home" class="home-hero">
           <div class="home-menu">
             <div class="home-desktop-navigation">
-              <nav class="home-centered">
+              <nav id="brandname" class="home-centered">
                 <a href="#home" class="home-link">
                   <h1 class="home-text">SlangAI</h1>
                 </a>
                 <div class="home-left">
                   <div class="home-links">
-                    <a href="#slang" class="home-link1 Link">Know the Slang</a>
-                    <a href="#genSlang" class="home-link2 Link">
+                    <a href="#slang" class="home-link01 Link">Know The Slang</a>
+                    <a href="#genSlang" class="home-link02 Link">
                       Slangs of the Day
                     </a>
-                    <a href="#slangtence" class="home-link3 Link">Slangtence</a>
+                    <a href="#slangEtymology" class="home-link04 Link">
+                      Slang Etymology
+                    </a>
+                    <a href="#slangTranslator" class="home-link05 Link" Link>
+                      Slangslator
+                    </a>
+                    <a href="#slangtence" class="home-link03 Link">
+                      Slangtence
+                    </a>
                   </div>
                 </div>
                 <div class="home-right">
                   <a
-                    href="https://github.com/Rutam21/SlangAI"
+                    href="https://www.github.com/SlangAI"
                     target="_blank"
                     rel="noreferrer noopener"
-                    class="home-link4"
+                    class="home-link06"
                   >
                     <svg viewBox="0 0 877.7142857142857 1024" class="home-icon">
                       <path
@@ -248,7 +256,7 @@
             </div>
           </div>
           <header class="home-header">
-            <h1 id="brandname" class="home-text01">Blend in with Gen Z Slangs</h1>
+            <h1 class="home-text01">Blend in with Gen Z Slangs</h1>
             <p class="home-text02">
               <span class="home-text03">
                 Not sure about the weird short words that Gen Z frequently use
@@ -258,24 +266,15 @@
               <span>Well, there you go&nbsp;</span>
               <br />
             </p>
-            <animate-on-reveal
-              animation="pulse"
-              duration="298ms"
-              delay="0s"
-              direction="normal"
-              easing="ease"
-              iteration="1"
-            >
-              <a href="#slang">
-                <div id="appStart" data-thq-animate-on-reveal="true" class="home-get-started">
-                  <span class="home-text07">Slang On</span>
-                </div>
-              </a>
-            </animate-on-reveal>
+            <a href="#slang">
+              <div id="appStart" class="home-get-started">
+                <span class="home-text07">Slang On</span>
+              </div>
+            </a>
             <img alt="image" src="./assets/hero.gif" class="home-image" />
           </header>
         </section>
-        <div id="slang" class="home-dashboard-preview">
+        <div id="slang" class="home-know-the-slang">
           <div class="home-outline">
             <form
               class="home-form"
@@ -283,41 +282,35 @@
               action="/getSlang"
               method="post"
             >
-              <div class="home-inner">
-                <span id="ktslang" class="home-text08 title">
-                  <span class="home-text09">&nbsp;KNOW&nbsp;</span>
-                  <span class="home-text10">THE SLANG</span>
-                </span>
-                <input
-                  type="text"
-                  id="slangInput"
-                  required="true"
-                  placeholder="Gen Z Slang Here"
-                  class="home-textinput input"
-                />
-                <animate-on-reveal
-                  animation="pulse"
-                  duration="300ms"
-                  delay="0s"
-                  direction="normal"
-                  easing="ease"
-                  iteration="1"
-                >
-                  <button
-                    id="findSlang"
-                    type="submit"
-                    data-thq-animate-on-reveal="true"
-                    class="home-get-started1"
-                  >
-                    <span class="home-text11">Hit Me Up</span>
-                  </button>
-                </animate-on-reveal>
-              </div>
+              <span class="home-text08 title">
+                <span class="home-text09">&nbsp;KNOW&nbsp;</span>
+                <span class="home-text10"></span>
+                <span class="home-text11">THE SLANG</span>
+              </span>
+              <span class="home-text12">
+                Enter the Slang and get its meaning instantly from our AI
+                Models.
+              </span>
+              <input
+                type="text"
+                id="slangInput"
+                required="true"
+                placeholder="Gen Z Slang Here"
+                class="home-textinput input"
+              />
+              <button
+                id="findSlang"
+                type="submit"
+                class="home-get-started1"
+                disabled
+              >
+                <span class="home-text13">Hit Me Up</span>
+              </button>
             </form>
             <div id="slangDiv" class="home-container1">
-              <span id="slangResult" class="home-text12"> </span>
+              <span id="slangResult" class="home-text14"></span>
               <button type="button" class="home-button button">
-                <svg viewBox="0 0 1024 1024" class="home-icon2">
+                <svg viewBox="0 0 1024 1024" class="home-icon02">
                   <path
                     d="M1014.662 822.66c-0.004-0.004-0.008-0.008-0.012-0.010l-310.644-310.65 310.644-310.65c0.004-0.004 0.008-0.006 0.012-0.010 3.344-3.346 5.762-7.254 7.312-11.416 4.246-11.376 1.824-24.682-7.324-33.83l-146.746-146.746c-9.148-9.146-22.45-11.566-33.828-7.32-4.16 1.55-8.070 3.968-11.418 7.31 0 0.004-0.004 0.006-0.008 0.010l-310.648 310.652-310.648-310.65c-0.004-0.004-0.006-0.006-0.010-0.010-3.346-3.342-7.254-5.76-11.414-7.31-11.38-4.248-24.682-1.826-33.83 7.32l-146.748 146.748c-9.148 9.148-11.568 22.452-7.322 33.828 1.552 4.16 3.97 8.072 7.312 11.416 0.004 0.002 0.006 0.006 0.010 0.010l310.65 310.648-310.65 310.652c-0.002 0.004-0.006 0.006-0.008 0.010-3.342 3.346-5.76 7.254-7.314 11.414-4.248 11.376-1.826 24.682 7.322 33.83l146.748 146.746c9.15 9.148 22.452 11.568 33.83 7.322 4.16-1.552 8.070-3.97 11.416-7.312 0.002-0.004 0.006-0.006 0.010-0.010l310.648-310.65 310.648 310.65c0.004 0.002 0.008 0.006 0.012 0.008 3.348 3.344 7.254 5.762 11.414 7.314 11.378 4.246 24.684 1.826 33.828-7.322l146.746-146.748c9.148-9.148 11.57-22.454 7.324-33.83-1.552-4.16-3.97-8.068-7.314-11.414z"
                   ></path>
@@ -326,15 +319,15 @@
             </div>
           </div>
         </div>
-        <section id="genSlang" class="home-integrations">
+        <section id="dailySlangs" class="home-slangs-of-the-day">
           <div class="home-centered-container">
             <div class="home-heading">
-              <span class="home-text20 title">
-                <span class="home-text21">&nbsp;SLANGS&nbsp;</span>
-                <span class="home-text23">OF THE</span>
+              <span class="home-text22 title">
+                <span class="home-text23">&nbsp;SLANGS&nbsp;</span>
+                <span class="home-text25">OF THE</span>
                 <span>&nbsp;DAY</span>
               </span>
-              <span class="home-text25">
+              <span class="home-text27">
                 Come here to learn some new slangs&nbsp;every day, randomly
                 generated by our smart AI Models.
               </span>
@@ -357,32 +350,32 @@
                   class="home-slider-slide swiper-slide"
                 >
                   <h1 id="slang1" class="home-heading1"></h1>
-                  <span id="meaning1" class="home-text28"> </span>
-                  <span id="sentence1" class="home-text31"> </span>
+                  <span id="meaning1" class="home-text30"></span>
+                  <span id="sentence1" class="home-text33"></span>
                 </div>
                 <div
                   data-thq="slider-slide"
                   class="home-slider-slide1 swiper-slide"
                 >
-                  <h1 id="slang2" class="home-text32"></h1>
-                  <span id="meaning2" class="home-text33"></span>
-                  <span id="sentence2" class="home-text34"> </span>
+                  <h1 id="slang2" class="home-text34"></h1>
+                  <span id="meaning2" class="home-text35"></span>
+                  <span id="sentence2" class="home-text36"></span>
                 </div>
                 <div
                   data-thq="slider-slide"
                   class="home-slider-slide2 swiper-slide"
                 >
-                  <h1 id="slang3" class="home-text35"></h1>
-                  <span id="meaning3" class="home-text36"></span>
-                  <span id="sentence3" class="home-text37"> </span>
+                  <h1 id="slang3" class="home-text37"></h1>
+                  <span id="meaning3" class="home-text38"></span>
+                  <span id="sentence3" class="home-text39"></span>
                 </div>
                 <div
                   data-thq="slider-slide"
                   class="home-slider-slide3 swiper-slide"
                 >
-                  <h1 id="slang4" class="home-text38"></h1>
-                  <span id="meaning4" class="home-text39"></span>
-                  <span id="sentence4" class="home-text40"> </span>
+                  <h1 id="slang4" class="home-text40"></h1>
+                  <span id="meaning4" class="home-text41"></span>
+                  <span id="sentence4" class="home-text42"></span>
                 </div>
               </div>
               <div
@@ -417,63 +410,156 @@
             </div>
           </div>
         </section>
-        <div id="slangtence" class="home-testimonial">
-          <span class="home-text41 title">
-            <span class="home-text42">&nbsp;SLANG&nbsp;</span>
-            <span class="home-text43">TENCE</span>
+        <section id="slangEtymology" class="home-slang-etymology">
+          <div class="home-outline1">
+            <form
+              class="home-form1"
+              id="slangEtymologyForm"
+              action="/getSlangEtymology"
+              method="post"
+            >
+              <span class="home-text43 title">
+                <span class="home-text44">&nbsp;SLANG&nbsp;</span>
+                <span class="home-text45"></span>
+                <span class="home-text46">ETYMOLOGY</span>
+              </span>
+              <span class="home-text47">
+                Dive into the origins of Slang Terms powered by AI.
+              </span>
+              <input
+                id="etymologyInput"
+                type="text"
+                required="true"
+                placeholder="Enter the Slang to find its Origins"
+                class="home-textinput1 input"
+              />
+              <button
+                id="findSlangEtymology"
+                type="submit"
+                type="button"
+                class="home-button2 button"
+                disabled
+              >
+                Get Diggin'
+              </button>
+            </form>
+            <div id="slangEtymologyDiv" class="home-container2">
+              <button type="button" class="home-button3 button">
+                <svg viewBox="0 0 1024 1024" class="home-icon06">
+                  <path
+                    d="M1014.662 822.66c-0.004-0.004-0.008-0.008-0.012-0.010l-310.644-310.65 310.644-310.65c0.004-0.004 0.008-0.006 0.012-0.010 3.344-3.346 5.762-7.254 7.312-11.416 4.246-11.376 1.824-24.682-7.324-33.83l-146.746-146.746c-9.148-9.146-22.45-11.566-33.828-7.32-4.16 1.55-8.070 3.968-11.418 7.31 0 0.004-0.004 0.006-0.008 0.010l-310.648 310.652-310.648-310.65c-0.004-0.004-0.006-0.006-0.010-0.010-3.346-3.342-7.254-5.76-11.414-7.31-11.38-4.248-24.682-1.826-33.83 7.32l-146.748 146.748c-9.148 9.148-11.568 22.452-7.322 33.828 1.552 4.16 3.97 8.072 7.312 11.416 0.004 0.002 0.006 0.006 0.010 0.010l310.65 310.648-310.65 310.652c-0.002 0.004-0.006 0.006-0.008 0.010-3.342 3.346-5.76 7.254-7.314 11.414-4.248 11.376-1.826 24.682 7.322 33.83l146.748 146.746c9.15 9.148 22.452 11.568 33.83 7.322 4.16-1.552 8.070-3.97 11.416-7.312 0.002-0.004 0.006-0.006 0.010-0.010l310.648-310.65 310.648 310.65c0.004 0.002 0.008 0.006 0.012 0.008 3.348 3.344 7.254 5.762 11.414 7.314 11.378 4.246 24.684 1.826 33.828-7.322l146.746-146.748c9.148-9.148 11.57-22.454 7.324-33.83-1.552-4.16-3.97-8.068-7.314-11.414z"
+                  ></path>
+                </svg>
+              </button>
+              <h1 id="etymologyTitle" class="home-text48"></h1>
+              <h1 class="home-text49 button">
+                Origin
+                <span id="etyOrigin"></span>
+              </h1>
+              <h1 class="home-text50 button">
+                Evolution
+                <span id="etyEvolution"></span>
+              </h1>
+              <h1 class="home-text51 button">
+                Cultural Impact
+                <span id="etyCulImpact"></span>
+              </h1>
+            </div>
+          </div>
+        </section>
+        <section id="slangTranslator" class="home-slang-translator">
+          <div class="home-centered-container1">
+            <form
+              class="home-form2"
+              id="slangslatorForm"
+              action="/getSlangslator"
+              method="post"
+            >
+              <div class="home-heading2">
+                <span class="home-text52 title">
+                  <span class="home-text53">&nbsp;SLANGS&nbsp;</span>
+                  <span>LATOR</span>
+                </span>
+                <span class="home-text56">
+                  Paraphrase Slangtences to Standard English with our AI Models.
+                </span>
+              </div>
+              <input
+                id="slangslatorInput"
+                type="text"
+                required="true"
+                placeholder="Enter the Slangtence here"
+                class="home-textinput2 input"
+              />
+              <button
+                id="getSlangslator"
+                type="submit"
+                class="home-button4 button"
+                disabled
+              >
+                Tap It!
+              </button>
+            </form>
+            <div id="slangslatorDiv" class="home-container3">
+              <h1 id="slangslatorResult" class="home-text57"></h1>
+              <button type="button" class="home-button5 button">
+                <svg viewBox="0 0 1024 1024" class="home-icon08">
+                  <path
+                    d="M1014.662 822.66c-0.004-0.004-0.008-0.008-0.012-0.010l-310.644-310.65 310.644-310.65c0.004-0.004 0.008-0.006 0.012-0.010 3.344-3.346 5.762-7.254 7.312-11.416 4.246-11.376 1.824-24.682-7.324-33.83l-146.746-146.746c-9.148-9.146-22.45-11.566-33.828-7.32-4.16 1.55-8.070 3.968-11.418 7.31 0 0.004-0.004 0.006-0.008 0.010l-310.648 310.652-310.648-310.65c-0.004-0.004-0.006-0.006-0.010-0.010-3.346-3.342-7.254-5.76-11.414-7.31-11.38-4.248-24.682-1.826-33.83 7.32l-146.748 146.748c-9.148 9.148-11.568 22.452-7.322 33.828 1.552 4.16 3.97 8.072 7.312 11.416 0.004 0.002 0.006 0.006 0.010 0.010l310.65 310.648-310.65 310.652c-0.002 0.004-0.006 0.006-0.008 0.010-3.342 3.346-5.76 7.254-7.314 11.414-4.248 11.376-1.826 24.682 7.322 33.83l146.748 146.746c9.15 9.148 22.452 11.568 33.83 7.322 4.16-1.552 8.070-3.97 11.416-7.312 0.002-0.004 0.006-0.006 0.010-0.010l310.648-310.65 310.648 310.65c0.004 0.002 0.008 0.006 0.012 0.008 3.348 3.344 7.254 5.762 11.414 7.314 11.378 4.246 24.684 1.826 33.828-7.322l146.746-146.748c9.148-9.148 11.57-22.454 7.324-33.83-1.552-4.16-3.97-8.068-7.314-11.414z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+        <div id="slangtence" class="home-slangtence">
+          <span class="home-text58 title">
+            <span class="home-text59">&nbsp;SLANG&nbsp;</span>
+            <span class="home-text60">TENCE</span>
           </span>
-          <div id="slangtenceBox" class="home-testimonial1">
-            <div class="home-container2">
-              <svg viewBox="0 0 950.8571428571428 1024" class="home-icon4">
+          <span class="home-text61">
+            Ask our AI to generate meaningful sentences that are made of slangs.
+          </span>
+          <div id="slangtenceBox" class="home-testimonial">
+            <div class="home-container4">
+              <svg viewBox="0 0 950.8571428571428 1024" class="home-icon10">
                 <path
                   d="M438.857 548.571v219.429c0 60.571-49.143 109.714-109.714 109.714h-219.429c-60.571 0-109.714-49.143-109.714-109.714v-402.286c0-161.143 131.429-292.571 292.571-292.571h36.571c20 0 36.571 16.571 36.571 36.571v73.143c0 20-16.571 36.571-36.571 36.571h-36.571c-80.571 0-146.286 65.714-146.286 146.286v18.286c0 30.286 24.571 54.857 54.857 54.857h128c60.571 0 109.714 49.143 109.714 109.714zM950.857 548.571v219.429c0 60.571-49.143 109.714-109.714 109.714h-219.429c-60.571 0-109.714-49.143-109.714-109.714v-402.286c0-161.143 131.429-292.571 292.571-292.571h36.571c20 0 36.571 16.571 36.571 36.571v73.143c0 20-16.571 36.571-36.571 36.571h-36.571c-80.571 0-146.286 65.714-146.286 146.286v18.286c0 30.286 24.571 54.857 54.857 54.857h128c60.571 0 109.714 49.143 109.714 109.714z"
                 ></path>
               </svg>
             </div>
-            <div class="home-container3">
-              <h1 id="slangtenceResult" class="home-text44"></h1>
-              <span id="meaning" class="home-text45"> </span>
+            <div class="home-container5">
+              <h1 id="slangtenceResult" class="home-text62"></h1>
+              <span id="meaning" class="home-text63"></span>
             </div>
-            <div class="home-container4">
-              <svg viewBox="0 0 950.8571428571428 1024" class="home-icon6">
+            <div class="home-container6">
+              <svg viewBox="0 0 950.8571428571428 1024" class="home-icon12">
                 <path
                   d="M438.857 182.857v402.286c0 161.143-131.429 292.571-292.571 292.571h-36.571c-20 0-36.571-16.571-36.571-36.571v-73.143c0-20 16.571-36.571 36.571-36.571h36.571c80.571 0 146.286-65.714 146.286-146.286v-18.286c0-30.286-24.571-54.857-54.857-54.857h-128c-60.571 0-109.714-49.143-109.714-109.714v-219.429c0-60.571 49.143-109.714 109.714-109.714h219.429c60.571 0 109.714 49.143 109.714 109.714zM950.857 182.857v402.286c0 161.143-131.429 292.571-292.571 292.571h-36.571c-20 0-36.571-16.571-36.571-36.571v-73.143c0-20 16.571-36.571 36.571-36.571h36.571c80.571 0 146.286-65.714 146.286-146.286v-18.286c0-30.286-24.571-54.857-54.857-54.857h-128c-60.571 0-109.714-49.143-109.714-109.714v-219.429c0-60.571 49.143-109.714 109.714-109.714h219.429c60.571 0 109.714 49.143 109.714 109.714z"
                 ></path>
               </svg>
             </div>
           </div>
-          <span class="home-text46">
-            Ask our AI to generate meaningful sentences that are made of slangs.
-          </span>
-          <animate-on-reveal
-            animation="pulse"
-            duration="300ms"
-            delay="0s"
-            direction="normal"
-            easing="ease"
-            iteration="1"
+          <button
+            id="getSlangtence"
+            type="button"
+            class="home-get-started1 button"
           >
-            <button
-              id="getSlangtence"
-              data-thq-animate-on-reveal="true"
-              class="home-get-started2"
-            >
-              <span class="home-text47">Generate</span>
-            </button>
-          </animate-on-reveal>
+            <span class="home-text64">Generate</span>
+          </button>
         </div>
         <footer class="home-footer">
           <div class="home-bottom">
-            <a href="#home" class="home-link6">
-              <h1 class="home-text48">SlangAI</h1>
+            <a href="#home" class="home-link08">
+              <h1 class="home-text65">SlangAI</h1>
             </a>
-            <span class="home-text49">
+            <span class="home-text66">
               <span>Copyright ©</span>
               <a
                 href="https://github.com/Rutam21"
                 target="_blank"
                 rel="noreferrer noopener"
-                class="home-link7"
+                class="home-link09"
               >
                 Rutam
               </a>
@@ -493,8 +579,11 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/shepherd.js/8.0.0/js/shepherd.min.js"></script>
     <script src="./scripts/apptour.js"></script>
+    <script src="./scripts/cacheUtils.js"></script>
     <script src="./scripts/getSlang.js"></script>
     <script src="./scripts/getSlangtence.js"></script>
-    <script src="./scripts/dailySlangs.js"></script>
+    <script src="./scripts/getDailySlangs.js"></script>
+    <script src="./scripts/getSlangEtymology.js"></script>
+    <script src="./scripts/getSlangslator.js"></script>
   </body>
 </html>

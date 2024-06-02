@@ -7,12 +7,13 @@ const cron = require("node-cron");
 const logger = require("./logger");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
 let cachedSlangData = null;
 let lastUpdatedTime = null;
+let isUpdating = false;
 
 // Middleware to parse incoming JSON requests
 app.use(bodyParser.json());
@@ -26,11 +27,10 @@ app.get("/", (req, res) => {
   res.sendFile("index.html", { root: "public" });
 });
 
-// Handle slang meaning expansion when the form is submitted
 app.post("/getSlang", async (req, res, next) => {
   try {
     const userInput = req.body.text;
-    const prompt = process.env.SLANG_PROMPT.replace('{userInput}', userInput);
+    const prompt = process.env.SLANG_PROMPT.replace("{userInput}", userInput);
     const slangResult = await run(prompt);
     res.send(slangResult);
   } catch (error) {
@@ -38,7 +38,34 @@ app.post("/getSlang", async (req, res, next) => {
   }
 });
 
-// Generate Slangtence
+app.post("/getSlangEtymology", async (req, res, next) => {
+  try {
+    const userInput = req.body.text;
+    const prompt = process.env.SLANG_ETYMOLOGY_PROMPT.replace(
+      "{userInput}",
+      userInput
+    );
+    const slangEtymologyResult = await run(prompt);
+    res.send(slangEtymologyResult);
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.post("/getSlangslator", async (req, res, next) => {
+  try {
+    const userInput = req.body.text;
+    const prompt = process.env.SLANGSLATOR_PROMPT.replace(
+      "{userInput}",
+      userInput
+    );
+    const slangslatorResult = await run(prompt);
+    res.send(slangslatorResult);
+  } catch (error) {
+    next(error);
+  }
+});
+
 app.get("/getSlangtence", async (req, res, next) => {
   try {
     const prompt = process.env.SLANGTENCE_PROMPT;
@@ -49,14 +76,14 @@ app.get("/getSlangtence", async (req, res, next) => {
   }
 });
 
-// Function to check if data is fresh (within 24 hours)
+// To check if data is fresh (within 24 hours)
 function isDataFresh(lastTime) {
   const currentTime = Date.now();
   const expiryTime = 24 * 60 * 60 * 1000;
   return currentTime - lastTime < expiryTime;
 }
 
-// Function to fetch daily slangs from Gemini API
+// To fetch daily slangs from Gemini API
 async function getDailySlangs() {
   const model = genAI.getGenerativeModel({ model: process.env.MODEL_NAME });
   const prompt = process.env.DAILY_SLANGS_PROMPT;
@@ -74,6 +101,8 @@ async function getDailySlangs() {
   } catch (error) {
     logger.error("Error generating daily slangs:", error.message);
     throw error;
+  } finally {
+    isUpdating = false; // Reset updating flag
   }
 }
 
@@ -83,7 +112,18 @@ app.get("/slangData", (req, res, next) => {
     return res.json(cachedSlangData);
   }
 
-  res.status(503).send("Slang data is currently being updated. Please try again shortly.");
+  if (isUpdating) {
+    return res
+      .status(503)
+      .send("Slang data is currently being updated. Please try again shortly.");
+  }
+
+  isUpdating = true;
+  getDailySlangs()
+    .then(() => res.json(cachedSlangData))
+    .catch((error) =>
+      res.status(503).send("Error updating slang data. Please try again later.")
+    );
 });
 
 // Basic Function API to generate content using Gemini
@@ -99,6 +139,11 @@ async function run(prompt) {
     throw error;
   }
 }
+
+// Server Health Check Route
+app.get("/health", (req, res, next) => {
+  res.status(200).send("Server is up and running");
+});
 
 // Central Error handling middleware
 app.use((err, req, res, next) => {
@@ -139,10 +184,14 @@ app.listen(port, async () => {
   await getDailySlangs();
 
   // Cron job to update the slang data every day at 00:00 UTC
-  cron.schedule("0 0 * * *", async () => {
-    await getDailySlangs();
-  }, {
-    scheduled: true,
-    timezone: "UTC"
-  });
+  cron.schedule(
+    "0 0 * * *",
+    async () => {
+      await getDailySlangs();
+    },
+    {
+      scheduled: true,
+      timezone: "UTC",
+    }
+  );
 });

@@ -1,63 +1,63 @@
 /* Custom App Tour styles */
 .shepherd-element {
-    border: 3px solid black;
+  border: 3px solid black;
 }
 .shepherd-header {
-    background: #c1c9c9;
-    border-bottom: 3px solid black;
-    display: flex;
-    width: auto;
+  background: #c1c9c9;
+  border-bottom: 3px solid black;
+  display: flex;
+  width: auto;
 }
 
 .shepherd-title {
-    color: black;
-    font-size: xx-large;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: black;
+  font-size: xx-large;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 .shepherd-content {
-    background: #7350f7;
+  background: #7350f7;
 }
 .shepherd-text {
-    color: black;
-    padding: 2rem;
-    font-size: 1.2rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    overflow: hidden; /* Hide both horizontal and vertical scroll bars */
+  color: black;
+  padding: 2rem;
+  font-size: 1.2rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  overflow: hidden;
 }
 .shepherd-button {
-    background: #fff;
-    border-top: 3px solid black;
-    border-radius: 0;
-    color: #16202d;
-    display: flex;
-    flex-grow: 1;
-    font-family: GT Pressura, sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    justify-content: center;
-    margin: 0;
-    padding: 1rem;
-    text-align: center;
-    text-transform: uppercase;
+  background: #fff;
+  border-top: 3px solid black;
+  border-radius: 0;
+  color: #16202d;
+  display: flex;
+  flex-grow: 1;
+  font-family: GT Pressura, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  justify-content: center;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 .shepherd-footer .shepherd-button:last-child:hover {
-    background: black;
-    color: #fff;
+  background: black;
+  color: #fff;
 }
 .shepherd-footer button:not(:last-of-type) {
-    background-color: #cad5d5;
-    border-right: 3px solid black;
+  background-color: #cad5d5;
+  border-right: 3px solid black;
 }
 .shepherd-footer button:not(:last-of-type):hover {
-    background-color: #cad5d5;
-    color: black;
+  background-color: #cad5d5;
+  color: black;
 }
 .shepherd-footer {
-    padding: 0;
+  padding: 0;
 }
 .shepherd-modal-overlay-container.shepherd-modal-is-visible {
-    height: 100vh;
-    opacity: .5;
-    transform: translateZ(0);
-    transition: all .3s ease-out, height 0s 0s, opacity .3s 0s;
+  height: 100vh;
+  opacity: 0.5;
+  transform: translateZ(0);
+  transition: all 0.3s ease-out, height 0s 0s, opacity 0.3s 0s;
 }
