@@ -142,10 +142,14 @@ async function run(prompt) {
 
 // Server Health Check Route
 app.get("/health", (req, res, next) => {
-  res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-  res.setHeader("Pragma", "no-cache");
-  res.setHeader("Expires", "0");
-  res.status(200).redirect("/check.html");
+  try {
+    res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    res.setHeader("Pragma", "no-cache");
+    res.setHeader("Expires", "0");
+    res.status(200).sendFile("check.html", { root: "public" });
+  } catch (error) {
+    res.status(500).send("Server error");
+  }
 });
 
 // Central Error handling middleware
